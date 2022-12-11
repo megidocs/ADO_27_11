@@ -12,12 +12,18 @@ namespace ADO_27_11.Pages
     {
         public const string DBname = "Database1.mdf";
         public const string tblName = "items";
-        public const string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LENOVO\source\repos\ADO_27_11\ADO_27_11\App_Data\" +
-            DBname + "; Integrated Security = True";
-        
+
+
+        public const string conString = @"Data Source = (LocalDB)\MSSQLLocalDB;
+            AttachDbFilename = |DataDirectory|\Database1.mdf;
+            Integrated Security = True";
+
+
+
 
         public static DataSet RetreiveDataSetTable(string SQLStr)
         {
+            //AppDomain.CurrentDomain.SetData("DataDirectory", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
             // Connection object to connect to the DB
             SqlConnection con = new SqlConnection(conString);
 
